@@ -113,6 +113,8 @@ class PythonLexer(object) :
     tokens = [
         'VARIABLE',
         'INTEGER',
+        'FLOATNUM',
+        'COMPLEXNUM',
         'STRING',
         'PLUS',
         'MINUS',
@@ -143,8 +145,6 @@ class PythonLexer(object) :
         'NEWLINE',
     ] + list(reserved.values())
 
-    t_INTEGER = r'[+-]?(0|[1-9]\d*)'
-    t_STRING = r'(\'\'\'(.|\n)*\'\'\'|\"\"\"(.|\n)*\"\"\"|\'[^\']*\'|\"[^\"]*\")'
     t_PLUS = r'\+'
     t_MINUS = r'-'
     t_TIMES = r'\*'
@@ -173,6 +173,22 @@ class PythonLexer(object) :
     t_BLANK = r'[ \t]'
 
     t_ignore_COMMENT = r'\#.*'
+
+    def t_COMPLEXNUM(self, t):
+        r'([+-]?(0|[1-9]\d*)\.\d+([eE][+-]?(0|[1-9]\d*))?)?[+-]?(0|[1-9]\d*)\.\d+([eE][+-]?(0|[1-9]\d*))?j'
+        return t
+
+    def t_FLOATNUM(self, t):
+        r'[+-]?(0|[1-9]\d*)\.\d+([eE][+-]?(0|[1-9]\d*))?'
+        return t
+
+    def t_INTEGER(self, t):
+        r'[+-]?(0|[1-9]\d*)'
+        return t
+    
+    def t_STRING(self, t):
+        r'[fr]?(\'\'\'(.|\n)*\'\'\'|\"\"\"(.|\n)*\"\"\"|\'[^\']*\'|\"[^\"]*\")'
+        return t
 
     def t_VARIABLE(self, t):
         r'[a-zA-Z_][a-zA-Z0-9_]*'
