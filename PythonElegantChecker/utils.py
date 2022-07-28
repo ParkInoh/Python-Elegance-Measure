@@ -36,7 +36,7 @@ def get_codes(files: list[str]) -> list[str]:
     """
     codes = []
     for file in files:
-        data = open(file, 'r')
+        data = open(file, 'rt', encoding='UTF8')
         codes.append(data.read())
         data.close()
     return codes

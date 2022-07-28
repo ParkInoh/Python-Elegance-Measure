@@ -1,4 +1,5 @@
 import elegance
+import PythonLexer
 import utils
 
 
@@ -17,20 +18,24 @@ def main():
     print('\ncode check:')
     codes = utils.get_codes(files)
     depths = instance.get_cyclomatic_metrics(codes)
+    halstead = instance.get_halstead_metrics(codes)
     max_depths = [max(depth) if len(depth) > 0 else 0 for depth in depths]
     mi_metrics = instance.get_mi_metrics(codes)
     # raw_metrics = elegance.get_raw_metrics(codes)
 
     print('depths:', depths)
     print('max depths:', max_depths)
+    print('halstead:', halstead)
     print('Maintainability Index metrics:', mi_metrics)
     # print('raw metrics:', raw_metrics)
 
     # check for variable names
     print('\nvariable name check:')
     # test tokens
-    tokens = ['test', 'aaa', 'bbb', 'ccc', 'aaba', 'ab']
+    tokens = ['test', 'apple', 'aaa', 'aaba', 'ab', 'aa', 'x', 'a']
     violations = instance.check_name_correctness(tokens)
+    print('tokens:', tokens)
+    print('violations:', violations)
     violation_counts = violations.count(True)
     print('name violation counts:', violation_counts)
 
