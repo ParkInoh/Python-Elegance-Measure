@@ -1,6 +1,6 @@
+
 import os
 import re
-import constants
 from nltk.downloader import download as nltk_download
 from nltk.corpus import words as nltk_words
 from flake8.api import legacy as flake8
@@ -8,7 +8,7 @@ from radon import complexity, raw, metrics
 
 
 class Elegance:
-    def __init__(self) -> None:
+    def __init__(self):
         """
         Initializes dictionary and the style guide.
         """
@@ -31,7 +31,6 @@ class Elegance:
                                                           'W293', 'W391', 'W503', 'W504', 'F403',
                                                           'B007', 'B950'],
                                                   max_line_length=200)
-        # self.style_guide = flake8.get_style_guide()
 
     def __get_flake8_report(self, file_path: str = None) -> flake8.Report:
         """
@@ -41,22 +40,24 @@ class Elegance:
         :returns: flake8.api.legacy.Report
         """
         self.reset_style_guide()
+        # set the file path to working directory if file path is None
         if file_path is None:
             file_path = os.getcwd()
         return self.style_guide.input_file(file_path)
 
-    def get_PEP8_metrics(self, files: list[str]) -> list[list[str]]:
+    def get_PEP8_metrics(self, files: list[str], violation: str = '') -> list[list[str]]:
         """
         Returns the PEP8 violations of a list of code files.
 
-        :param files:
+        :param files: list of file paths
+        :param violation: PEP8 violation to check (e.g. 'E', 'W', 'C')
         :returns: list[list[str]]
         """
         assert len(files) > 0, 'length of files must be greater than 0'
         reports = []
         for file in files:
             report = self.__get_flake8_report(file)
-            reports.append(report.get_statistics(''))
+            reports.append(report.get_statistics(violation))
         return reports
 
     def get_cyclomatic_metrics(self, codes: list[str]) -> list[list[int]]:
@@ -71,6 +72,19 @@ class Elegance:
             elements = complexity.cc_visit(code)
             depths.append([element.complexity for element in elements])
         return depths
+
+    def get_halstead_metrics(self, codes: list[str]) -> list[list[float]]:
+        """
+        Returns the Halstead metrics of a list of codes.
+
+        :param codes: strings of raw code
+        :return: list[list[volume, difficulty, effort]]
+        """
+        halstead = []
+        for code in codes:
+            element = metrics.h_visit(code)
+            halstead.append([element.total.volume, element.total.difficulty, element.total.effort])
+        return halstead
 
     def get_raw_metrics(self, codes: list[str]) -> list[list[int]]:
         """
@@ -102,11 +116,11 @@ class Elegance:
         :returns: bool: True if the word is a correct variable name
         """
         assert len(word) > 0, 'length of word must be greater than 0'
-        if word in self.word_set:
-            if not any(regex.match(word) for regex in constants.REGEX_VAR_NAME_ERROR):
-                return False
-        else:
+        # dictionary word check
+        if word not in self.word_set:
             return True
+        else:
+            return False
 
     def check_name_dictionary(self, words: list[str]) -> list[bool]:
         """
@@ -144,4 +158,4 @@ class Elegance:
         """
         dictionary_check = self.check_name_dictionary(words)
         sequential_check = self.check_sequential(words)
-        return [dictionary or sequential for dictionary, sequential in zip(dictionary_check, sequential_check)]
+        return [(dictionary | sequential) for dictionary, sequential in zip(dictionary_check, sequential_check)]
