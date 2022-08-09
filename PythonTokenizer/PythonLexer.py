@@ -1,10 +1,8 @@
 import ply.lex as lex
 
 class PythonLexer(object) :
-    reserved = {
-        'False' : 'FALSE',      #reserved words
-        'None' : 'NONE',
-        'True' : 'TRUE',
+    reserved = {    
+        'None' : 'NONE',        #reserved words
         'and' : 'AND',
         'as' : 'AS',
         'assert' : 'ASSERT',
@@ -111,10 +109,12 @@ class PythonLexer(object) :
     }
     
     tokens = [
-        'VARIABLE',
+        'NAME',
+        'MODULE',
         'INTEGER',
         'FLOATNUM',
         'COMPLEXNUM',
+        'BOOLEAN',
         'STRING',
         'PLUS',
         'MINUS',
@@ -190,9 +190,13 @@ class PythonLexer(object) :
         r'[fr]?(\'\'\'(.|\n)*\'\'\'|\"\"\"(.|\n)*\"\"\"|\'[^\']*\'|\"[^\"]*\")'
         return t
 
-    def t_VARIABLE(self, t):
+    def t_BOOLEAN(self, t):
+        r'(True|False)'
+        return t
+
+    def t_NAME(self, t):
         r'[a-zA-Z_][a-zA-Z0-9_]*'
-        t.type = self.reserved.get(t.value, 'VARIABLE')
+        t.type = self.reserved.get(t.value, 'NAME')
         return t
 
     def t_NEWLINE(self, t):
@@ -216,8 +220,9 @@ class PythonLexer(object) :
                 break
             print(tok)
 
-    def test_blank(self, data):
+    def test_prototype(self, data):
         self.lexer.input(data)
+        python_tokens = []
 
         newline_flag = False
         
@@ -231,5 +236,7 @@ class PythonLexer(object) :
                 continue
             if(tok.type != 'NEWLINE' and tok.type != 'BLANK' and newline_flag == True):
                 newline_flag = False
+            python_tokens.append(tok)
             print(tok)
-            
+
+        return python_tokens
