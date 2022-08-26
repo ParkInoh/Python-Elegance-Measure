@@ -1,6 +1,7 @@
 form input::file-selector-button {
   display: none;
 }
+
 .noShow{
   width: 6em;
   color:transparent;
@@ -50,6 +51,7 @@ form input::file-selector-button {
   text-transform: capitalize;
   text-align: center;
 }
+
 
 @import url(https://fonts.googleapis.com/css?family=BenchNine:700);
 .snip1535 {
