@@ -110,7 +110,7 @@ class PythonLexer(object) :
     
     tokens = [
         'NAME',
-        'MODULE',
+        'FUNCTION',
         'INTEGER',
         'FLOATNUM',
         'COMPLEXNUM',
@@ -142,6 +142,7 @@ class PythonLexer(object) :
         'UNDERBAR',
         'TRIPLEDOT',
         'BLANK',
+        'INDENT',
         'NEWLINE',
     ] + list(reserved.values())
 
@@ -170,7 +171,7 @@ class PythonLexer(object) :
     t_ASSIGNMENT = r'='
     t_UNDERBAR = r'_'
     t_TRIPLEDOT = r'\.{3}'
-    t_BLANK = r'[ \t]'
+    t_BLANK = r'[  \t\v\r\f]'   #Since there are two types of spaces, they are added separately.
 
     t_ignore_COMMENT = r'\#.*'
 
@@ -220,7 +221,7 @@ class PythonLexer(object) :
                 break
             print(tok)
 
-    def test_prototype(self, data):
+    def tokenize(self, data):
         self.lexer.input(data)
         python_tokens = []
 
@@ -237,6 +238,34 @@ class PythonLexer(object) :
             if(tok.type != 'NEWLINE' and tok.type != 'BLANK' and newline_flag == True):
                 newline_flag = False
             python_tokens.append(tok)
-            print(tok)
+
+        functions = []
+        for i in range(len(python_tokens)):
+            if(python_tokens[i].type == 'DEF' and python_tokens[i+1].type == 'NAME'):
+                python_tokens[i+1].type = 'FUNCTION'
+                functions.append(python_tokens[i+1].value)
+                continue
+            if(python_tokens[i].type == 'NAME' and python_tokens[i].value in functions):
+                python_tokens[i].type = 'FUNCTION'
+                continue
 
         return python_tokens
+
+    def tokenize_indent(self, data):
+        python_tokens = self.tokenize(data)
+        indent_tokens = []
+
+        indent_flag = False
+
+        for tok in python_tokens:
+            if(tok.type == 'BLANK' and indent_flag == False):
+                tok.type = 'INDENT'
+                indent_flag = True
+                indent_tokens.append(tok)
+            elif(tok.type == 'BLANK' and indent_flag == True):
+                indent_tokens[-1].value += tok.value
+            else:
+                indent_flag = False
+                indent_tokens.append(tok)
+
+        return indent_tokens
