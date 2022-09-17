@@ -34,8 +34,7 @@ function FileUploader() {
           className={fileInputText}
           multiple/>
       </div>
-      <button className="snip1535">Similarity Check</button>
-      <button className="snip1535">Elegance Measure</button>
+      <button className="snip1535">Code submit</button>
     </form>
   )
 }
