@@ -1,10 +1,8 @@
 import ply.lex as lex
 
 class PythonLexer(object) :
-    reserved = {
-        'False' : 'FALSE',      #reserved words
-        'None' : 'NONE',
-        'True' : 'TRUE',
+    reserved = {    
+        'None' : 'NONE',        #reserved words
         'and' : 'AND',
         'as' : 'AS',
         'assert' : 'ASSERT',
@@ -111,8 +109,12 @@ class PythonLexer(object) :
     }
     
     tokens = [
-        'VARIABLE',
+        'NAME',
+        'FUNCTION',
         'INTEGER',
+        'FLOATNUM',
+        'COMPLEXNUM',
+        'BOOLEAN',
         'STRING',
         'PLUS',
         'MINUS',
@@ -140,11 +142,10 @@ class PythonLexer(object) :
         'UNDERBAR',
         'TRIPLEDOT',
         'BLANK',
+        'INDENT',
         'NEWLINE',
     ] + list(reserved.values())
 
-    t_INTEGER = r'[+-]?(0|[1-9]\d*)'
-    t_STRING = r'(\'\'\'(.|\n)*\'\'\'|\"\"\"(.|\n)*\"\"\"|\'[^\']*\'|\"[^\"]*\")'
     t_PLUS = r'\+'
     t_MINUS = r'-'
     t_TIMES = r'\*'
@@ -170,13 +171,33 @@ class PythonLexer(object) :
     t_ASSIGNMENT = r'='
     t_UNDERBAR = r'_'
     t_TRIPLEDOT = r'\.{3}'
-    t_BLANK = r'[ \t]'
+    t_BLANK = r'[  \t\v\r\f]'   #Since there are two types of spaces, they are added separately.
 
     t_ignore_COMMENT = r'\#.*'
 
-    def t_VARIABLE(self, t):
+    def t_COMPLEXNUM(self, t):
+        r'([+-]?(0|[1-9]\d*)\.\d+([eE][+-]?(0|[1-9]\d*))?)?[+-]?(0|[1-9]\d*)\.\d+([eE][+-]?(0|[1-9]\d*))?j'
+        return t
+
+    def t_FLOATNUM(self, t):
+        r'[+-]?(0|[1-9]\d*)\.\d+([eE][+-]?(0|[1-9]\d*))?'
+        return t
+
+    def t_INTEGER(self, t):
+        r'[+-]?(0|[1-9]\d*)'
+        return t
+    
+    def t_STRING(self, t):
+        r'[fr]?(\'\'\'(.|\n)*\'\'\'|\"\"\"(.|\n)*\"\"\"|\'[^\']*\'|\"[^\"]*\")'
+        return t
+
+    def t_BOOLEAN(self, t):
+        r'(True|False)'
+        return t
+
+    def t_NAME(self, t):
         r'[a-zA-Z_][a-zA-Z0-9_]*'
-        t.type = self.reserved.get(t.value, 'VARIABLE')
+        t.type = self.reserved.get(t.value, 'NAME')
         return t
 
     def t_NEWLINE(self, t):
@@ -200,8 +221,9 @@ class PythonLexer(object) :
                 break
             print(tok)
 
-    def test_blank(self, data):
+    def tokenize(self, data):
         self.lexer.input(data)
+        python_tokens = []
 
         newline_flag = False
         
@@ -215,5 +237,35 @@ class PythonLexer(object) :
                 continue
             if(tok.type != 'NEWLINE' and tok.type != 'BLANK' and newline_flag == True):
                 newline_flag = False
-            print(tok)
-            
+            python_tokens.append(tok)
+
+        functions = []
+        for i in range(len(python_tokens)):
+            if(python_tokens[i].type == 'DEF' and python_tokens[i+1].type == 'NAME'):
+                python_tokens[i+1].type = 'FUNCTION'
+                functions.append(python_tokens[i+1].value)
+                continue
+            if(python_tokens[i].type == 'NAME' and python_tokens[i].value in functions):
+                python_tokens[i].type = 'FUNCTION'
+                continue
+
+        return python_tokens
+
+    def tokenize_indent(self, data):
+        python_tokens = self.tokenize(data)
+        indent_tokens = []
+
+        indent_flag = False
+
+        for tok in python_tokens:
+            if(tok.type == 'BLANK' and indent_flag == False):
+                tok.type = 'INDENT'
+                indent_flag = True
+                indent_tokens.append(tok)
+            elif(tok.type == 'BLANK' and indent_flag == True):
+                indent_tokens[-1].value += tok.value
+            else:
+                indent_flag = False
+                indent_tokens.append(tok)
+
+        return indent_tokens
