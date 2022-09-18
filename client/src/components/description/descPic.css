@@ -1,0 +1,20 @@
+.desc {
+  width: 100%;
+  display: flex;
+  
+}
+
+.desc li {
+  display: flex;
+  width: 25%;
+}
+li img{
+  width: 18em;
+  height: 18em;
+}
+
+.arrow {
+  width: 5em;
+  height: 5em;
+  margin-top: 5em;
+}
