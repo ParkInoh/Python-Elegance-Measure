@@ -54,7 +54,7 @@ form input::file-selector-button {
 
 
 @import url(https://fonts.googleapis.com/css?family=BenchNine:700);
-.snip1535 {
+.snip {
   background-color: #c47135;
   border: none;
   color: #ffffff;
@@ -71,8 +71,8 @@ form input::file-selector-button {
   text-transform: uppercase;
   font-weight: 700;
 }
-.snip1535:before,
-.snip1535:after {
+.snip:before,
+.snip:after {
   border-color: transparent;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
@@ -83,28 +83,28 @@ form input::file-selector-button {
   position: absolute;
   width: 24px;
 }
-.snip1535:before {
+.snip:before {
   border-color: #c47135;
   border-right-width: 2px;
   border-top-width: 2px;
   right: -5px;
   top: -5px;
 }
-.snip1535:after {
+.snip:after {
   border-bottom-width: 2px;
   border-color: #c47135;
   border-left-width: 2px;
   bottom: -5px;
   left: -5px;
 }
-.snip1535:hover,
-.snip1535.hover {
+.snip:hover,
+.snip.hover {
   background-color: #c47135;
 }
-.snip1535:hover:before,
-.snip1535.hover:before,
-.snip1535:hover:after,
-.snip1535.hover:after {
+.snip:hover:before,
+.snip.hover:before,
+.snip:hover:after,
+.snip.hover:after {
   height: 100%;
   width: 100%;
 }
