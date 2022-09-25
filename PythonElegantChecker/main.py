@@ -125,7 +125,7 @@ def main():
             "sum_depth": sum_depth
         }
         # add file to analyzer_result with json_obj
-        analyzer_result[file_name.split('.')[0]] = json_obj
+        analyzer_result[file_name] = json_obj
 
         # print(fileName)
         # print('conditional(if):', len(conditionals))
