@@ -1,7 +1,7 @@
 const express = require("express");
 const multer = require("multer");
 const cors = require("cors");
-const file = require('fs');
+const fs = require('fs');
 const {PythonShell} = require('python-shell');
 const app = express();
 
@@ -9,7 +9,7 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
-const server = app.listen(process.env.PORT, ()=>{
+app.listen(process.env.PORT, ()=>{
   console.log(`Server Started on Port ${process.env.PORT}`)
 });
 
@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
     cb(null, 'public');
   },
   filename: (req, file, cb) => {
-    cb(null, Date.now() + '-' + file.originalname);
+    cb(null, file.originalname);
   }
 })
 
@@ -33,8 +33,13 @@ app.post('/upload', (req, res) => {
   })
 })
 
-app.get('/runPy', (req, res) => {
-  const fn = file.readdirSync('public');
-  console.log(fn);
+app.post('/runPy', (req, res) => {
+  const fn = fs.readdirSync('public');
+  fs.readFile('public/output.json', 'utf-8', (err, data) => {
+    if(err) return console.log(err);
+    const tmp = "[" + data.substring(1, data.length-1) + "]";
+    console.log(tmp);
+    res.send({data, fileList: fn});
+  })
   //PythonShell.run("")
 })

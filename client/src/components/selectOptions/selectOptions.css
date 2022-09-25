@@ -11,6 +11,9 @@
   font-weight: bold;
 }
 
+.options span {
+  font-size: 1.3em;
+}
 .options select{
   margin: 1em;
   font-size: 1.2em;

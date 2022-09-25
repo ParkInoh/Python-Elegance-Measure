@@ -4,7 +4,6 @@ import styles from './similarity.module.css';
 function Similarity() {
   return (
     <>
-    
     <NavBar/>
     <h1>유사도</h1>
     <div className={styles.table}>표위치</div>

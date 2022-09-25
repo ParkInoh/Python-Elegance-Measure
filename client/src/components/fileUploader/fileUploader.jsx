@@ -8,17 +8,23 @@ function FileUploader() {
   const [fileInputText, setFileInputText] = useState("form-control noShow");
   const [showOptions, setShowOptions] = useState(false);
   const onInputChange = (e) => {
-    console.log(e.target.files);
+    //console.log(e.target.files.length);
     setFiles(e.target.files);
     setFileInputText("form-control");
   }
+
   const onSubmit = (e) => {
     e.preventDefault();
     const data = new FormData();
     for(let i = 0; i < files.length; i++){
       data.append('file', files[i]);
     }
+    if(files.length === 0){
+      toast.error("Upload at least one file");
+      return;
+    }
     data.append('file', files);
+    // console.log(files);
     axios.post('//localhost:5000/upload', data)
     .then((e)=>{
       toast.success('Upload Success', e);
@@ -34,13 +40,14 @@ function FileUploader() {
       <div className="form-group files">
         <input
           type="file"
+          accept='.py'
           onChange={onInputChange}
           className={fileInputText}
           multiple/>
       </div>
       <button className="snip">Code submit</button>
     </form>
-    {showOptions && <SelectOptions/>}
+    {showOptions && <SelectOptions where="uploader"/>}
     </>
   )
 }
