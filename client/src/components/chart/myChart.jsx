@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import ScatterChart from '../scatterChart';
 import { useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
 import './myChart.css';
 import SelectOptions from '../selectOptions/selectOptions';
 import { Scatter } from 'react-chartjs-2';
+import {Chart} from 'chart.js/auto'
+import styled from 'styled-components';
 let chartList = [];
 
 const init = (eOptions, fileList, elegantData) => {
@@ -21,24 +22,31 @@ const init = (eOptions, fileList, elegantData) => {
 const MyChart = () => {
   const eOptions = useSelector(state => state.options.options);
   const location = useLocation().state.data;
-  const fileList = location.fileList;
   const elegantData = JSON.parse(location.data);
-
+  const fileList = Object.keys(elegantData);
   useEffect(() => {
-    init(eOptions, fileList, elegantData)
+    init(eOptions, fileList, elegantData);
+    setMyData({
+      datasets:[{
+        label: "Elegance(The lower the better)",
+        data: chartList,
+        backgroundColor: ["red"],
+        borderColor: "black",
+        borderWidth: 1,
+      }],
+    })
   }, [eOptions]);
-  
-  console.log(chartList);
-  const [myData, setMyData] = useState({
-    datasets:[{
-      label: "Elegance",
-      data: chartList,
-      backgroundColor: ["red"],
-      borderColor: "black",
-      borderWidth: 1,
-    }],
-  })
-
+  const [myData, setMyData] = useState(
+    {
+      datasets:[{
+        label: "Elegance(The lower the better)",
+        data: chartList,
+        backgroundColor: ["red"],
+        borderColor: "black",
+        borderWidth: 1,
+      }],
+    }
+  )
   const options = {
     spanGaps: true,
     interaction: {
@@ -59,9 +67,7 @@ const MyChart = () => {
       },
       tooltip: {
         backgroundColor: 'rgba(124, 35, 35, 0.5)',
-      // 툴팁 색상을 지정할 수 있습니다.
         padding: 10,
-      // 툴팁 패딩을 지정할 수 있습니다.
         bodySpacing: 5,
         callbacks: {
           label: (ct) => {
@@ -104,11 +110,17 @@ const MyChart = () => {
     },
   }
   return (
-    <div style={{width: 800}}>
+    <Container>
       <Scatter data={myData} options={options}/>
-      <SelectOptions where="elegant" myData={myData} setMyData={setMyData}/>
-    </div>
+      <SelectOptions
+        where="elegant"/>
+    </Container>
   )
 };
 
 export default MyChart;
+
+const Container = styled.div`
+  width: 100vw;
+  max-width: 99%;
+`

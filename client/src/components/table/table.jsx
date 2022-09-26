@@ -6,14 +6,13 @@ import './table.css'
 const Table = () => {
   const location = useLocation().state.data;
   const elegantData = JSON.parse(location.data);
-  const fileList = location.fileList;
+  const fileList = Object.keys(elegantData);
   let chartList = [];
   for(let i = 0; i < fileList.length; i++){
     let tmp = elegantData[fileList[i]];
     tmp['code'] = fileList[i];
     chartList.push(tmp);
   }
-  
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => chartList, []);
   const tableInstance = useTable({

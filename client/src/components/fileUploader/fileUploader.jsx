@@ -8,7 +8,6 @@ function FileUploader() {
   const [fileInputText, setFileInputText] = useState("form-control noShow");
   const [showOptions, setShowOptions] = useState(false);
   const onInputChange = (e) => {
-    //console.log(e.target.files.length);
     setFiles(e.target.files);
     setFileInputText("form-control");
   }
@@ -24,7 +23,6 @@ function FileUploader() {
       return;
     }
     data.append('file', files);
-    // console.log(files);
     axios.post('//localhost:5000/upload', data)
     .then((e)=>{
       toast.success('Upload Success', e);

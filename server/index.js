@@ -34,12 +34,12 @@ app.post('/upload', (req, res) => {
 })
 
 app.post('/runPy', (req, res) => {
-  const fn = fs.readdirSync('public');
-  fs.readFile('public/output.json', 'utf-8', (err, data) => {
-    if(err) return console.log(err);
-    const tmp = "[" + data.substring(1, data.length-1) + "]";
-    console.log(tmp);
-    res.send({data, fileList: fn});
+  PythonShell.run("main.py", null, (err) => {
+    if(err) throw err;
+    console.log("finished");
   })
-  //PythonShell.run("")
+  fs.readFile('output.json', 'utf-8', (err, data) => {
+    if(err) return console.log(err);
+    res.send({data});
+  })
 })

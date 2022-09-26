@@ -12,7 +12,6 @@ function Elegance() {
       <Table/>
       <div className={styles.container}>
         <MyChart/>
-
       </div>
       <ToastContainer/>
       <Footer/>

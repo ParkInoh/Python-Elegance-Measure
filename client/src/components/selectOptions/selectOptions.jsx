@@ -5,17 +5,12 @@ import './selectOptions.css';
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { change } from '../../optionsSlice';
-const SelectOptions = ({where, myData, setMyData}) => {
+const SelectOptions = ({where}) => {
   const navigate = useNavigate();
   const options = useSelector(state => state.options.options);
   const dispatch = useDispatch();
   const [option1, setOption1] = useState(options[0]);
   const [option2, setOption2] = useState(options[1]);
-  const good = () => {
-    console.log(option1);
-    console.log(option2);
-    console.log(options);
-  }
   const onSubmit = (e) => {
     e.preventDefault();
     if(option1 === option2){
@@ -28,13 +23,8 @@ const SelectOptions = ({where, myData, setMyData}) => {
       axios.post('//localhost:5000/runPy')
       .then((response)=>{
         toast.success('Run Success');
-        navigate('/elegant', {state: {data: response.data, fileList: response.fileList}});
-        //console.log(response.data.data);
+        navigate('/elegant', {state: {data: response.data}});
       })
-    }
-    else if(where === "elegant"){
-      setMyData(myData);
-      console.log("options",options);
     }
   }
   return (
@@ -42,7 +32,7 @@ const SelectOptions = ({where, myData, setMyData}) => {
     <form className="options">
       <p className='options_cmd'>Select 2 options</p>
       <hr/><span>x:</span>
-      <select onChange={e => setOption1(e.target.value)}>
+      <select value={option1} onChange={e => setOption1(e.target.value)}>
         <option value="conditionals">Conditionals</option>
         <option value="loops">Loops</option>
         <option value="loops_for">Loops for</option>
@@ -54,7 +44,7 @@ const SelectOptions = ({where, myData, setMyData}) => {
         <option value="sum_depth">Sum depth</option>
       </select>
       <span>y:</span>
-      <select onChange={e => setOption2(e.target.value)}>
+      <select value={option2} onChange={e => setOption2(e.target.value)}>
         <option value="conditionals">Conditionals</option>
         <option value="loops">Loops</option>
         <option value="loops_for">Loops for</option>
@@ -68,7 +58,6 @@ const SelectOptions = ({where, myData, setMyData}) => {
       <hr/><br/> 
       <button onClick={onSubmit} className="snip">Check Elegance</button>
     </form>
-    <button onClick={good}>good</button>
     </>
   )
 };
