@@ -38,7 +38,7 @@ def get_codes(files: list[str]) -> list[str]:
     assert len(files) > 0, 'length of files must be greater than 0'
     codes = []
     for file in files:
-        data = open(file, 'rt', encoding='UTF8')
+        data = open('./public/' + file, 'rt', encoding='UTF8')
         codes.append(data.read())
         data.close()
     return codes
