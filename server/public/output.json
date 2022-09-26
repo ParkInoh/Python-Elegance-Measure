@@ -1,79 +1,68 @@
 {
-    "constants.py": {
+    "constants": {
         "conditionals": 0,
         "loops": 0,
         "loops_for": 0,
         "loops_while": 0,
         "functions": 0,
         "functions_recursion": 0,
-        "max_depth": 0,
-        "avg_depth": 0,
-        "sum_depth": 0
+        "max_depth": -1.161,
+        "avg_depth": -0.857,
+        "sum_depth": -1.441
     },
-    "elegance.py": {
+    "elegance": {
         "conditionals": 1,
         "loops": 6,
         "loops_for": 6,
         "loops_while": 0,
         "functions": 8,
         "functions_recursion": 0,
-        "max_depth": 3,
-        "avg_depth": 2.11,
-        "sum_depth": 19
+        "max_depth": -0.743,
+        "avg_depth": -0.555,
+        "sum_depth": -0.094
     },
-    "main.py": {
-        "conditionals": 7,
-        "loops": 9,
-        "loops_for": 9,
+    "eleganceUtils": {
+        "conditionals": 0,
+        "loops": 3,
+        "loops_for": 3,
+        "loops_while": 0,
+        "functions": 2,
+        "functions_recursion": 0,
+        "max_depth": -0.604,
+        "avg_depth": -0.357,
+        "sum_depth": -0.945
+    },
+    "main": {
+        "conditionals": 9,
+        "loops": 12,
+        "loops_for": 12,
         "loops_while": 0,
         "functions": 1,
         "functions_recursion": 1,
-        "max_depth": 16,
-        "avg_depth": 16.0,
-        "sum_depth": 16
+        "max_depth": 1.764,
+        "avg_depth": 2.144,
+        "sum_depth": 0.047
     },
-    "output.json": {
-        "conditionals": 0,
-        "loops": 0,
-        "loops_for": 0,
-        "loops_while": 0,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": 0,
-        "avg_depth": 0,
-        "sum_depth": 0
-    },
-    "PythonCodeAnalyzer.py": {
+    "PythonCodeAnalyzer": {
         "conditionals": 13,
         "loops": 12,
         "loops_for": 9,
         "loops_while": 3,
         "functions": 5,
         "functions_recursion": 0,
-        "max_depth": 8,
-        "avg_depth": 6.67,
-        "sum_depth": 40
+        "max_depth": -0.046,
+        "avg_depth": 0.096,
+        "sum_depth": 1.393
     },
-    "PythonLexer.py": {
+    "PythonLexer": {
         "conditionals": 8,
         "loops": 4,
         "loops_for": 2,
         "loops_while": 2,
         "functions": 12,
         "functions_recursion": 0,
-        "max_depth": 14,
-        "avg_depth": 2.69,
-        "sum_depth": 35
-    },
-    "utils.py": {
-        "conditionals": 1,
-        "loops": 3,
-        "loops_for": 3,
-        "loops_while": 0,
-        "functions": 3,
-        "functions_recursion": 1,
-        "max_depth": 4,
-        "avg_depth": 3.0,
-        "sum_depth": 9
+        "max_depth": 0.789,
+        "avg_depth": -0.472,
+        "sum_depth": 1.039
     }
 }
