@@ -17,7 +17,7 @@ import os
 #     return name
 
 
-def get_files_by_dir(dir_path: str = './') -> list[str]:
+def get_files_by_dir(dir_path: str = './public/') -> list[str]:
     """
     Returns the file paths in a directory.
 
