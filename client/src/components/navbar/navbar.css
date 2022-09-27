@@ -6,8 +6,8 @@ a{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(2, 45, 2);
-  padding: 8px 12px;
+  background-color: rgb(1, 27, 1);
+  padding: 1.2em 1em;
 }
 
 .navbar_logo{

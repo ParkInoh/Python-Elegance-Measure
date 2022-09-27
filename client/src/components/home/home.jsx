@@ -12,7 +12,6 @@ function Home() {
       <div className={styles.container}>
         <Description/>
         <FileUploader/>
-
         <ToastContainer/>
       </div>
       <Footer/>

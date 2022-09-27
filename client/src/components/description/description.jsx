@@ -5,7 +5,7 @@ function Description() {
     <div className='desBox'>Description
     <ol>
       <li>
-        코드를 첨부합니다(다중 첨부 가능).
+        Python 코드를 첨부합니다(다중 첨부 가능).
       </li>
       <li>
         우아함 옵션을 선택하고 제출 버튼을 클릭합니다.
