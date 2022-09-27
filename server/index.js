@@ -35,7 +35,7 @@ app.post('/upload', (req, res) => {
 
 app.post('/runPy', (req, res) => {
   PythonShell.run("main.py", null, (err) => {
-    if(err) throw err;
+    if(err) return err;
     console.log("finished");
   })
   fs.readFile('output.json', 'utf-8', (err, data) => {

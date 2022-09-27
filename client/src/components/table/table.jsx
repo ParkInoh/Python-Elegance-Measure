@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useLocation } from 'react-router';
-import { COLUMNS } from '../../column';
-import { useTable } from 'react-table';
+import { COLUMNS, GROUPED_COLUMNS } from '../../column';
+import { useSortBy, useTable } from 'react-table';
 import './table.css'
 const Table = () => {
   const location = useLocation().state.data;
@@ -18,7 +18,7 @@ const Table = () => {
   const tableInstance = useTable({
     columns,
     data,
-  })
+  }, useSortBy)
 
   const {
     getTableProps,
@@ -34,7 +34,12 @@ const Table = () => {
         {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map(column => (
-                  <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                  <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                    {column.render('Header')}
+                    <span>
+                      {column.isSorted ? (column.isSortedDesc ? '🔽' : '🔼') : ''}
+                    </span>
+                  </th>
                 ))}
             </tr>
           ))}

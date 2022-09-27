@@ -41,7 +41,7 @@ const MyChart = () => {
       datasets:[{
         label: "Elegance(The lower the better)",
         data: chartList,
-        backgroundColor: ["red"],
+        backgroundColor: ["green"],
         borderColor: "black",
         borderWidth: 1,
       }],
