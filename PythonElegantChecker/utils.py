@@ -1,20 +1,5 @@
 import os
-
-
-# import constants
-
-
-# def camel_to_snake(name) -> str:
-#     """
-#     Converts a camel case name to snake case.
-#
-#     :param name: str
-#     :return: str
-#     """
-#     name = constants.REGEX_CAMEL_TO_SNAKE1.sub(r'\1_\2', name)
-#     name = constants.REGEX_CAMEL_TO_SNAKE2.sub(r'\1_\2', name)
-#     name = name.replace("-", "_").lower()
-#     return name
+import numpy as np
 
 
 def get_files_by_dir(dir_path: str = './') -> list[str]:
@@ -44,7 +29,14 @@ def get_codes(files: list[str]) -> list[str]:
     return codes
 
 
-def recursion(i=0):
-    i += 1
-    if i < 10:
-        recursion(i)
+def get_z_scores(metrics: list[float]) -> list[float]:
+    """
+    Returns the z-scores of a list of metrics.
+
+    :param metrics: list[float]
+    :returns: list[float]
+    """
+    assert len(metrics) > 0, 'length of metrics must be greater than 0'
+    mean = sum(metrics) / len(metrics)
+    std = np.std(metrics)
+    return [round((x - mean) / std, 3) for x in metrics]
