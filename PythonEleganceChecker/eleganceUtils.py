@@ -18,6 +18,7 @@ import os
 
 
 def get_files_by_dir(dir_path: str = './public/') -> list[str]:
+# def get_files_by_dir(dir_path: str = './') -> list[str]:
     """
     Returns the file paths in a directory.
 
@@ -39,6 +40,7 @@ def get_codes(files: list[str]) -> list[str]:
     codes = []
     for file in files:
         data = open('./public/' + file, 'rt', encoding='UTF8')
+        # data = open(file, 'rt', encoding='UTF8')
         codes.append(data.read())
         data.close()
     return codes
