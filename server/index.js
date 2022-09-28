@@ -25,6 +25,8 @@ const storage = multer.diskStorage({
 const upload = multer({storage}).array('file');
 
 app.post('/upload', (req, res) => {
+  fs.rmdirSync('./public', {recursive:true});
+  fs.mkdirSync('./public');
   upload(req, res, (err) => {
     if(err){
       return res.status(500).json(err)
