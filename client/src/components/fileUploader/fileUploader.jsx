@@ -43,7 +43,7 @@ function FileUploader() {
           className={fileInputText}
           multiple/>
       </div>
-      <button className="snip">Code submit</button>
+      <button className="snip">submit code</button>
     </form>
     {showOptions && <SelectOptions where="uploader"/>}
     </>

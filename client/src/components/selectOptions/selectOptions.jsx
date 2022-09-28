@@ -11,6 +11,13 @@ const SelectOptions = ({where}) => {
   const dispatch = useDispatch();
   const [option1, setOption1] = useState(options[0]);
   const [option2, setOption2] = useState(options[1]);
+  const buttonClass = where === "elegant" ? "snip" : "snip noShow";
+
+  const downloadJson = (e) => {
+    e.preventDefault();
+    axios.get('//localhost:5000/download')
+    .then(response => console.log(response));
+  }
   const onSubmit = (e) => {
     e.preventDefault();
     if(option1 === option2){
@@ -33,10 +40,9 @@ const SelectOptions = ({where}) => {
       <p className='options_cmd'>Select 2 options</p>
       <hr/><span>x:</span>
       <select value={option1} onChange={e => setOption1(e.target.value)}>
+      <option value="score">Score</option>
         <option value="conditionals">Conditionals</option>
         <option value="loops">Loops</option>
-        <option value="loops_for">Loops for</option>
-        <option value="loops_while">Loops while</option>
         <option value="functions">Functions</option>
         <option value="functions_recursion">Functions recursion</option>
         <option value="max_depth">Max depth</option>
@@ -45,10 +51,9 @@ const SelectOptions = ({where}) => {
       </select>
       <span>y:</span>
       <select value={option2} onChange={e => setOption2(e.target.value)}>
+        <option value="score">Score</option>
         <option value="conditionals">Conditionals</option>
         <option value="loops">Loops</option>
-        <option value="loops_for">Loops for</option>
-        <option value="loops_while">Loops while</option>
         <option value="functions">Functions</option>
         <option value="functions_recursion">Functions recursion</option>
         <option value="max_depth">Max depth</option>
@@ -57,6 +62,7 @@ const SelectOptions = ({where}) => {
       </select>
       <hr/><br/> 
       <button onClick={onSubmit} className="snip">Check Elegance</button>
+      <button onClick={downloadJson} className={buttonClass}>Download</button>
     </form>
     </>
   )

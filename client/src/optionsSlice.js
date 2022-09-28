@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  options: ["conditionals", "loops"]
+  options: ["score", "conditionals"]
 }
 
 const optionsSlice = createSlice({

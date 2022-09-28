@@ -22,3 +22,7 @@
 .options .snip{
   margin: 1em;
 }
+
+.noShow {
+  display: none;
+}

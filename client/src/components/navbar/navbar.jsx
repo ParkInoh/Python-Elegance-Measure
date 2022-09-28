@@ -6,7 +6,7 @@ function NavBar() {
     <nav className="navbar">
       <div className="navbar_logo">
         <i className="fa-regular fa-copy"></i>
-        <Link className="link" to='/'> Python elegant measure</Link>
+        <Link className="link" to='/'> Python elegance measure</Link>
       </div>
       <ul className="navbar_menu">
 

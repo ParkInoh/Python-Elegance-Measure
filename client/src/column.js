@@ -5,6 +5,11 @@ export const COLUMNS = [
     accessor: 'code'
   },
   {
+    Header: 'Score',
+    Footer: 'Score',
+    accessor: 'score'
+  },
+  {
     Header: 'Conditionals',
     Footer: 'Conditionals',
     accessor:'conditionals'
@@ -13,16 +18,6 @@ export const COLUMNS = [
     Header: 'Loops',
     Footer: 'Loops',
     accessor:'loops'
-  },
-  {
-    Header: 'Loops for',
-    Footer: 'Loops for',
-    accessor:'loops_for'
-  },
-  {
-    Header: 'Loops while',
-    Footer: 'Loops while',
-    accessor:'loops_while'
   },
   {
     Header: 'Functions',
