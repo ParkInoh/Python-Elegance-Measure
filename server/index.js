@@ -4,13 +4,14 @@ const cors = require("cors");
 const fs = require('fs');
 const {PythonShell} = require('python-shell');
 const app = express();
+const path = require("path");
 
 require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
 app.listen(process.env.PORT, ()=>{
-  console.log(`Server Started on Port ${process.env.PORT}`)
+  console.log(`Server Started on Port ${process.env.PORT}`);
 });
 
 const storage = multer.diskStorage({
@@ -25,23 +26,42 @@ const storage = multer.diskStorage({
 const upload = multer({storage}).array('file');
 
 app.post('/upload', (req, res) => {
-  fs.rmdirSync('./public', {recursive:true});
-  fs.mkdirSync('./public');
-  upload(req, res, (err) => {
-    if(err){
-      return res.status(500).json(err)
+  try{
+    fs.unlinkSync('./output.json');
+  } catch(err) {
+    if(err.code === 'ENOENT'){
+      console.log('No such file');
     }
-    return res.status(200).send(req.file);
-  })
+  } finally{
+    fs.rmSync('./public', {recursive:true});
+    fs.mkdirSync('./public');
+    upload(req, res, (err) => {
+      if(err){
+        return res.status(500).json(err)
+      }
+      return res.status(200).send(req.file);
+    })
+  }
 })
 
 app.post('/runPy', (req, res) => {
   PythonShell.run("main.py", null, (err) => {
     if(err) return err;
     console.log("finished");
+    fs.readFile('output.json', 'utf-8', (err, data) => {
+      if(err) return console.log(err);
+      res.send({data});
+    })
   })
-  fs.readFile('output.json', 'utf-8', (err, data) => {
-    if(err) return console.log(err);
-    res.send({data});
-  })
+  // fs.readFile('output.json', 'utf-8', (err, data) => {
+  //   if(err) return console.log(err);
+  //   res.send({data});
+  // })
+})
+
+app.get('/download', (req, res) => {
+  //console.log("good");
+  //res.download("./output.json", encodeURIComponent(path.basename("/output.json")));
+  const filename = `${__dirname}/output.json`;
+  res.download('./main.py');
 })

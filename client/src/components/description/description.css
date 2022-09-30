@@ -21,3 +21,8 @@ ol li{
   margin: 1em;
   z-index: 1;
 }
+
+ol div {
+  font-size: 0.8em;
+  text-align: justify;
+}

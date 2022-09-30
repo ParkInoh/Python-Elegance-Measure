@@ -7,9 +7,9 @@ import { Scatter } from 'react-chartjs-2';
 import {Chart} from 'chart.js/auto'
 import styled from 'styled-components';
 let chartList = [];
-
+const chartLabel = "Elegance(The lower the better except score)";
 const init = (eOptions, fileList, elegantData) => {
-  chartList.splice(0, fileList.length);
+  chartList = [];
   for(let i = 0; i < fileList.length; i++){
     let tmp = {}
     tmp['x'] = elegantData[fileList[i]][eOptions[0]];
@@ -28,7 +28,7 @@ const MyChart = () => {
     init(eOptions, fileList, elegantData);
     setMyData({
       datasets:[{
-        label: "Elegance(The lower the better)",
+        label: chartLabel,
         data: chartList,
         backgroundColor: ["red"],
         borderColor: "black",
@@ -39,7 +39,7 @@ const MyChart = () => {
   const [myData, setMyData] = useState(
     {
       datasets:[{
-        label: "Elegance(The lower the better)",
+        label: chartLabel,
         data: chartList,
         backgroundColor: ["green"],
         borderColor: "black",

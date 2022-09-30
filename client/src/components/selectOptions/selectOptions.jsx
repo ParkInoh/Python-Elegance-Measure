@@ -11,13 +11,13 @@ const SelectOptions = ({where}) => {
   const dispatch = useDispatch();
   const [option1, setOption1] = useState(options[0]);
   const [option2, setOption2] = useState(options[1]);
-  const buttonClass = where === "elegant" ? "snip" : "snip noShow";
+  //const buttonClass = where === "elegant" ? "snip" : "snip noShow";
 
-  const downloadJson = (e) => {
-    e.preventDefault();
-    axios.get('//localhost:5000/download')
-    .then(response => console.log(response));
-  }
+  // const downloadJson = (e) => {
+  //   e.preventDefault();
+  //   axios.get('//localhost:5000/download')
+  //   .then(response => console.log(response));
+  // }
   const onSubmit = (e) => {
     e.preventDefault();
     if(option1 === option2){
@@ -62,7 +62,7 @@ const SelectOptions = ({where}) => {
       </select>
       <hr/><br/> 
       <button onClick={onSubmit} className="snip">Check Elegance</button>
-      <button onClick={downloadJson} className={buttonClass}>Download</button>
+      {/* <button onClick={downloadJson} className={buttonClass}>Download</button> */}
     </form>
     </>
   )
