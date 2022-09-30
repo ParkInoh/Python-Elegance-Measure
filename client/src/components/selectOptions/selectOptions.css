@@ -23,3 +23,6 @@
   margin: 1em;
 }
 
+.invisible {
+  display: none;
+}

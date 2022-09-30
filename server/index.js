@@ -60,8 +60,5 @@ app.post('/runPy', (req, res) => {
 })
 
 app.get('/download', (req, res) => {
-  //console.log("good");
-  //res.download("./output.json", encodeURIComponent(path.basename("/output.json")));
-  const filename = `${__dirname}/output.json`;
-  res.download('./main.py');
+  res.download('./output.json');
 })

@@ -5,19 +5,26 @@ import './selectOptions.css';
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { change } from '../../optionsSlice';
+import FileDownload from 'js-file-download';
+
 const SelectOptions = ({where}) => {
   const navigate = useNavigate();
   const options = useSelector(state => state.options.options);
   const dispatch = useDispatch();
   const [option1, setOption1] = useState(options[0]);
   const [option2, setOption2] = useState(options[1]);
-  //const buttonClass = where === "elegant" ? "snip" : "snip noShow";
+  const buttonClass = where === "elegant" ? "snip" : "snip invisible";
 
-  // const downloadJson = (e) => {
-  //   e.preventDefault();
-  //   axios.get('//localhost:5000/download')
-  //   .then(response => console.log(response));
-  // }
+  const downloadJson = (e) => {
+    e.preventDefault();
+    axios({
+      url: '//localhost:5000/download',
+      method: "GET",
+      responseType: "blob"
+    }).then((response) => {
+      FileDownload(response.data, "output.json");
+    })
+  }
   const onSubmit = (e) => {
     e.preventDefault();
     if(option1 === option2){
@@ -62,7 +69,7 @@ const SelectOptions = ({where}) => {
       </select>
       <hr/><br/> 
       <button onClick={onSubmit} className="snip">Check Elegance</button>
-      {/* <button onClick={downloadJson} className={buttonClass}>Download</button> */}
+      <button onClick={downloadJson} className={buttonClass}>Download</button>
     </form>
     </>
   )
