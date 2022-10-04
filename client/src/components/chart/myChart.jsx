@@ -41,7 +41,7 @@ const MyChart = () => {
       datasets:[{
         label: chartLabel,
         data: chartList,
-        backgroundColor: ["green"],
+        backgroundColor: ["red"],
         borderColor: "black",
         borderWidth: 1,
       }],
@@ -82,9 +82,9 @@ const MyChart = () => {
         title: {
           display: true,
           text: "x: "+eOptions[0],
-          color: '#911',
+          color: 'black',
           font: {
-            family: 'Comic Sans MS',
+            family: 'sans serif',
             size: 20,
             weight: 'bold',
             lineHeight: 1.2,
@@ -97,11 +97,12 @@ const MyChart = () => {
         title: {
           display: true,
           text: "y: " + eOptions[1],
-          color: '#191',
+          color: 'black',
           font: {
-            family: 'Comic Sans MS',
+            family: 'sans serif',
             size: 20,
             style: 'normal',
+            weight: 'bold',
             lineHeight: 1.2
           },
           padding: {top: 30, left: 0, right: 0, bottom: 0}

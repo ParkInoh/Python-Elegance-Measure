@@ -1,7 +1,7 @@
 .desBox{
   box-sizing: border-box;
   border-radius: 0px;
-  border: 1px solid rgb(220, 228, 2);
+  border: 1px solid rgb(37, 37, 37);
   margin : 10px;
   width: 99%;
   color : rgb(255, 255, 255);
@@ -9,7 +9,7 @@
   margin-right:auto;
   text-align : center;
   overflow: auto;
-  background-color: rgba(39, 88, 88);
+  background-color: rgb(88, 88, 88);
   -ms-overflow-style: none;
   font-size: 2em;
   z-index: 0;

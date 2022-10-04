@@ -69,7 +69,7 @@ const SelectOptions = ({where}) => {
       </select>
       <hr/><br/> 
       <button onClick={onSubmit} className="snip">Check Elegance</button>
-      <button onClick={downloadJson} className={buttonClass}>Download</button>
+      <button onClick={downloadJson} className={buttonClass}>Download JSON</button>
     </form>
     </>
   )

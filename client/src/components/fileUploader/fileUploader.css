@@ -7,7 +7,7 @@ form input::file-selector-button {
   color:transparent;
 }
 .files input {
-  outline: 2px dashed #92b0b3;
+  outline: 2px dashed grey;
   outline-offset: -10px;
   -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
   transition: outline-offset .15s ease-in-out, background-color .15s linear;
@@ -16,9 +16,9 @@ form input::file-selector-button {
   margin: 0;
   width: 99% !important;
 }
-.files input:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;
+.files input:focus{     outline: 2px dashed grey;  outline-offset: -10px;
   -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
-  transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;
+  transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid grey;
 }
 .files{ position:relative}
 .files:after {  pointer-events: none;
@@ -46,7 +46,7 @@ form input::file-selector-button {
   content: " 파일 드래그 앤 드롭";
   display: block;
   margin: 0 auto;
-  color: #2ea591;
+  color: black;
   font-weight: 600;
   text-transform: capitalize;
   text-align: center;

@@ -12,12 +12,12 @@ table td, table th {
 
 table tr:nth-child(even){background-color: #f2f2f2;}
 
-table tr:hover {background-color: #ddd;}
+/* table tr:hover {background-color: #ddd;} */
 
 table th, tfoot {
   padding-top: 1em;
   padding-bottom: 1em;
   text-align: center;
-  background-color:darkcyan;
+  background-color:black;
   color: white;
 }
