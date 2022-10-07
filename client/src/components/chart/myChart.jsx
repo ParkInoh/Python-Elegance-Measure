@@ -60,7 +60,7 @@ const MyChart = () => {
           padding: 15,
           // 범례 간 가로 간격을 조정할 수 있습니다. 범례의 상하 padding을 지정하는 기능은 따로 지원되지 않아요. ㅠㅠ
           font: { // 범례의 폰트 스타일도 지정할 수 있습니다.
-            family: "'Noto Sans KR', 'serif'",
+            family: "sans-serif",
             lineHeight: 1,
           },
         }

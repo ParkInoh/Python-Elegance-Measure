@@ -13,13 +13,13 @@ const SelectOptions = ({where}) => {
   const dispatch = useDispatch();
   const [option1, setOption1] = useState(options[0]);
   const [option2, setOption2] = useState(options[1]);
-  const buttonClass = where === "elegant" ? "snip" : "snip invisible";
+  //const buttonClass = where === "elegant" ? "snip" : "snip invisible";
 
   const downloadJson = (e) => {
     e.preventDefault();
     axios({
       url: '//localhost:5000/download',
-      method: "GET",
+      method: "POST",
       responseType: "blob"
     }).then((response) => {
       FileDownload(response.data, "output.json");
@@ -69,7 +69,7 @@ const SelectOptions = ({where}) => {
       </select>
       <hr/><br/> 
       <button onClick={onSubmit} className="snip">Check Elegance</button>
-      <button onClick={downloadJson} className={buttonClass}>Download JSON</button>
+      <button onClick={downloadJson} className="snip">Download JSON</button>
     </form>
     </>
   )

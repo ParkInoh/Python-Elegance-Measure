@@ -1,522 +1,62 @@
 {
-    "4033.py": {
-        "score": 6.467,
-        "conditionals": 2,
-        "loops": 6,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4036.py": {
-        "score": 0.756,
-        "conditionals": 6,
-        "loops": 7,
-        "functions": 5,
-        "functions_recursion": 0,
-        "max_depth": -0.036,
-        "avg_depth": -0.124,
-        "sum_depth": 0.605
-    },
-    "4040.py": {
-        "score": -2.169,
-        "conditionals": 10,
-        "loops": 10,
-        "functions": 2,
-        "functions_recursion": 1,
-        "max_depth": 1.673,
-        "avg_depth": 1.058,
-        "sum_depth": 0.984
-    },
-    "4044.py": {
-        "score": 3.539,
-        "conditionals": 2,
-        "loops": 7,
-        "functions": 1,
-        "functions_recursion": 1,
-        "max_depth": -0.036,
-        "avg_depth": 0.058,
-        "sum_depth": -0.435
-    },
     "4045.py": {
-        "score": 2.137,
+        "score": 0.662,
         "conditionals": 0,
         "loops": 12,
         "functions": 2,
         "functions_recursion": 1,
-        "max_depth": -0.378,
-        "avg_depth": -0.306,
-        "sum_depth": -0.435
+        "max_depth": -0.524,
+        "avg_depth": -0.459,
+        "sum_depth": -0.788
     },
-    "4048.py": {
-        "score": -4.017,
-        "conditionals": 12,
-        "loops": 3,
-        "functions": 6,
-        "functions_recursion": 4,
-        "max_depth": 0.135,
-        "avg_depth": -0.003,
-        "sum_depth": 1.267
-    },
-    "4054.py": {
-        "score": 1.82,
-        "conditionals": 3,
-        "loops": 6,
-        "functions": 4,
+    "constants.py": {
+        "score": 6.873,
+        "conditionals": 0,
+        "loops": 0,
+        "functions": 0,
         "functions_recursion": 0,
-        "max_depth": 0.135,
-        "avg_depth": -0.124,
-        "sum_depth": 0.322
+        "max_depth": -0.81,
+        "avg_depth": -0.74,
+        "sum_depth": -1.313
     },
-    "4061.py": {
-        "score": -3.505,
-        "conditionals": 5,
-        "loops": 11,
+    "elegance.py": {
+        "score": -0.794,
+        "conditionals": 1,
+        "loops": 6,
         "functions": 8,
         "functions_recursion": 0,
-        "max_depth": 0.477,
-        "avg_depth": -0.147,
-        "sum_depth": 1.362
+        "max_depth": -0.381,
+        "avg_depth": -0.443,
+        "sum_depth": 1.182
     },
-    "4064.py": {
-        "score": 1.924,
-        "conditionals": 5,
-        "loops": 5,
-        "functions": 2,
-        "functions_recursion": 0,
-        "max_depth": 0.647,
-        "avg_depth": 0.694,
-        "sum_depth": 0.605
-    },
-    "4074.py": {
-        "score": -0.137,
-        "conditionals": 6,
-        "loops": 7,
-        "functions": 1,
-        "functions_recursion": 1,
-        "max_depth": 1.673,
-        "avg_depth": 1.877,
-        "sum_depth": 0.511
-    },
-    "4081.py": {
-        "score": -7.037,
-        "conditionals": 16,
-        "loops": 19,
-        "functions": 4,
-        "functions_recursion": 0,
-        "max_depth": 0.818,
-        "avg_depth": 0.876,
-        "sum_depth": 2.402
-    },
-    "4083.py": {
-        "score": -9.14,
-        "conditionals": 27,
-        "loops": 10,
-        "functions": 1,
-        "functions_recursion": 0,
-        "max_depth": 5.261,
-        "avg_depth": 5.698,
-        "sum_depth": 2.497
-    },
-    "4090.py": {
-        "score": -2.227,
-        "conditionals": 9,
-        "loops": 9,
-        "functions": 4,
-        "functions_recursion": 0,
-        "max_depth": 0.647,
-        "avg_depth": 0.512,
-        "sum_depth": 1.646
-    },
-    "4094.py": {
-        "score": 4.256,
-        "conditionals": 5,
-        "loops": 9,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4102.py": {
-        "score": 3.449,
-        "conditionals": 6,
-        "loops": 11,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4103.py": {
-        "score": 2.45,
-        "conditionals": 12,
-        "loops": 11,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4105.py": {
-        "score": 3.434,
-        "conditionals": 9,
-        "loops": 9,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4114.py": {
-        "score": -1.282,
-        "conditionals": 8,
-        "loops": 18,
-        "functions": 1,
-        "functions_recursion": 1,
-        "max_depth": -0.207,
-        "avg_depth": -0.124,
-        "sum_depth": -0.529
-    },
-    "4117.py": {
-        "score": 1.919,
-        "conditionals": 3,
-        "loops": 6,
-        "functions": 2,
-        "functions_recursion": 0,
-        "max_depth": 0.477,
-        "avg_depth": 0.24,
-        "sum_depth": 0.133
-    },
-    "4121.py": {
-        "score": 4.06,
+    "eleganceUtils.py": {
+        "score": 3.391,
         "conditionals": 0,
-        "loops": 4,
-        "functions": 2,
-        "functions_recursion": 0,
-        "max_depth": -0.207,
-        "avg_depth": -0.215,
-        "sum_depth": -0.34
-    },
-    "4132.py": {
-        "score": 1.034,
-        "conditionals": 5,
-        "loops": 11,
-        "functions": 1,
-        "functions_recursion": 1,
-        "max_depth": -0.207,
-        "avg_depth": -0.124,
-        "sum_depth": -0.529
-    },
-    "4133.py": {
-        "score": 3.483,
-        "conditionals": 2,
-        "loops": 4,
-        "functions": 1,
-        "functions_recursion": 1,
-        "max_depth": -0.207,
-        "avg_depth": -0.124,
-        "sum_depth": -0.529
-    },
-    "4138.py": {
-        "score": 2.275,
-        "conditionals": 12,
-        "loops": 10,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4140.py": {
-        "score": -5.135,
-        "conditionals": 17,
-        "loops": 8,
-        "functions": 4,
-        "functions_recursion": 1,
-        "max_depth": 0.647,
-        "avg_depth": 0.694,
-        "sum_depth": 2.024
-    },
-    "4145.py": {
-        "score": -2.994,
-        "conditionals": 10,
         "loops": 3,
-        "functions": 4,
-        "functions_recursion": 4,
-        "max_depth": -0.036,
-        "avg_depth": -0.033,
-        "sum_depth": 0.511
-    },
-    "4148.py": {
-        "score": 2.716,
-        "conditionals": 6,
-        "loops": 11,
-        "functions": 0,
+        "functions": 2,
         "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
+        "max_depth": -0.238,
+        "avg_depth": -0.248,
+        "sum_depth": -0.394
     },
-    "4178.py": {
-        "score": 3.354,
+    "main.py": {
+        "score": -8.897,
         "conditionals": 9,
-        "loops": 7,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4180.py": {
-        "score": -0.819,
-        "conditionals": 26,
         "loops": 12,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4190.py": {
-        "score": -6.103,
-        "conditionals": 12,
-        "loops": 11,
-        "functions": 4,
-        "functions_recursion": 4,
-        "max_depth": -0.036,
-        "avg_depth": 0.058,
-        "sum_depth": 0.7
-    },
-    "4191.py": {
-        "score": 1.343,
-        "conditionals": 15,
-        "loops": 10,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4197.py": {
-        "score": 1.059,
-        "conditionals": 5,
-        "loops": 7,
-        "functions": 1,
-        "functions_recursion": 0,
-        "max_depth": 0.647,
-        "avg_depth": 0.785,
-        "sum_depth": -0.056
-    },
-    "4199.py": {
-        "score": 1.248,
-        "conditionals": 3,
-        "loops": 9,
-        "functions": 1,
-        "functions_recursion": 0,
-        "max_depth": 0.306,
-        "avg_depth": 0.421,
-        "sum_depth": -0.245
-    },
-    "4202.py": {
-        "score": -0.202,
-        "conditionals": 18,
-        "loops": 13,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4211.py": {
-        "score": 3.975,
-        "conditionals": 2,
-        "loops": 7,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4212.py": {
-        "score": 4.184,
-        "conditionals": 4,
-        "loops": 5,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4231.py": {
-        "score": 0.86,
-        "conditionals": 8,
-        "loops": 14,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4237.py": {
-        "score": -3.758,
-        "conditionals": 6,
-        "loops": 5,
-        "functions": 4,
-        "functions_recursion": 4,
-        "max_depth": -0.036,
-        "avg_depth": -0.033,
-        "sum_depth": 0.511
-    },
-    "4238.py": {
-        "score": 3.243,
-        "conditionals": 5,
-        "loops": 7,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4241.py": {
-        "score": -0.255,
-        "conditionals": 12,
-        "loops": 15,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4247.py": {
-        "score": -0.232,
-        "conditionals": 5,
-        "loops": 11,
         "functions": 1,
         "functions_recursion": 1,
-        "max_depth": -0.207,
-        "avg_depth": -0.124,
-        "sum_depth": -0.529
+        "max_depth": 2.193,
+        "avg_depth": 2.209,
+        "sum_depth": 1.444
     },
-    "4250.py": {
-        "score": 1.406,
-        "conditionals": 8,
-        "loops": 11,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4255.py": {
-        "score": -0.365,
-        "conditionals": 5,
-        "loops": 11,
-        "functions": 1,
-        "functions_recursion": 1,
-        "max_depth": -0.207,
-        "avg_depth": -0.124,
-        "sum_depth": -0.529
-    },
-    "4256.py": {
-        "score": 1.428,
-        "conditionals": 7,
-        "loops": 11,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4257.py": {
-        "score": -5.879,
-        "conditionals": 15,
-        "loops": 4,
-        "functions": 4,
-        "functions_recursion": 4,
-        "max_depth": 0.135,
-        "avg_depth": 0.149,
-        "sum_depth": 0.889
-    },
-    "4268.py": {
-        "score": -1.394,
+    "utils.py": {
+        "score": -1.235,
         "conditionals": 1,
-        "loops": 10,
-        "functions": 2,
-        "functions_recursion": 0,
-        "max_depth": 0.818,
-        "avg_depth": 0.603,
-        "sum_depth": 0.511
-    },
-    "4272.py": {
-        "score": 1.347,
-        "conditionals": 10,
-        "loops": 9,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4276.py": {
-        "score": 1.161,
-        "conditionals": 7,
-        "loops": 11,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4278.py": {
-        "score": 1.024,
-        "conditionals": 1,
-        "loops": 9,
-        "functions": 1,
-        "functions_recursion": 0,
-        "max_depth": -0.036,
-        "avg_depth": 0.058,
-        "sum_depth": -0.435
-    },
-    "4282.py": {
-        "score": -11.718,
-        "conditionals": 29,
-        "loops": 14,
-        "functions": 4,
-        "functions_recursion": 0,
-        "max_depth": 1.844,
-        "avg_depth": 1.149,
-        "sum_depth": 2.969
-    },
-    "4284.py": {
-        "score": -3.429,
-        "conditionals": 9,
-        "loops": 8,
-        "functions": 4,
+        "loops": 3,
+        "functions": 3,
         "functions_recursion": 1,
-        "max_depth": -0.036,
-        "avg_depth": -0.033,
-        "sum_depth": 0.511
-    },
-    "4287.py": {
-        "score": 2.843,
-        "conditionals": 2,
-        "loops": 7,
-        "functions": 0,
-        "functions_recursion": 0,
-        "max_depth": -0.72,
-        "avg_depth": -0.67,
-        "sum_depth": -0.813
-    },
-    "4289.py": {
-        "score": -2.38,
-        "conditionals": 8,
-        "loops": 8,
-        "functions": 2,
-        "functions_recursion": 0,
-        "max_depth": 0.647,
-        "avg_depth": 0.785,
-        "sum_depth": 0.7
+        "max_depth": -0.238,
+        "avg_depth": -0.319,
+        "sum_depth": -0.131
     }
 }

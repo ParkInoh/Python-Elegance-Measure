@@ -41,24 +41,28 @@ app.post('/upload', (req, res) => {
       }
       return res.status(200).send(req.file);
     })
+    PythonShell.run("main.py", null, (err) => {
+      if(err) return err;
+      console.log("finished");
+    })
   }
 })
 
 app.post('/runPy', (req, res) => {
-  PythonShell.run("main.py", null, (err) => {
-    if(err) return err;
-    console.log("finished");
-    fs.readFile('output.json', 'utf-8', (err, data) => {
-      if(err) return console.log(err);
-      res.send({data});
-    })
-  })
-  // fs.readFile('output.json', 'utf-8', (err, data) => {
-  //   if(err) return console.log(err);
-  //   res.send({data});
+  // PythonShell.run("main.py", null, (err) => {
+  //   if(err) return err;
+  //   console.log("finished");
+  //   fs.readFile('output.json', 'utf-8', (err, data) => {
+  //     if(err) return console.log(err);
+  //     res.send({data});
+  //   })
   // })
+  fs.readFile('output.json', 'utf-8', (err, data) => {
+    if(err) return console.log(err);
+    res.send({data});
+  })
 })
 
-app.get('/download', (req, res) => {
+app.post('/download', (req, res) => {
   res.download('./output.json');
 })
