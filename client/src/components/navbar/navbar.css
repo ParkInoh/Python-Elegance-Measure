@@ -1,0 +1,39 @@
+a{
+  text-decoration: none;
+  color: white;
+}
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  padding: 1.2em 1em;
+}
+
+.navbar_logo{
+  font-size: 1.5em;
+  color: white;
+}
+
+.navbar_logo:hover, .link:hover {
+  color: aqua;
+}
+
+.navbar_logo i{
+  color: orange
+}
+
+.navbar_menu{
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.navbar_menu li{
+  /* padding: 6px 12px; */
+  padding: 0.4em 0.75em;
+}
+
+.link:hover {
+  color: aqua;
+}

@@ -1,0 +1,28 @@
+.desBox{
+  box-sizing: border-box;
+  border-radius: 0px;
+  border: 1px solid rgb(37, 37, 37);
+  margin : 10px;
+  width: 99%;
+  color : rgb(255, 255, 255);
+  margin-left:auto;
+  margin-right:auto;
+  text-align : center;
+  overflow: auto;
+  background-color: rgb(88, 88, 88);
+  -ms-overflow-style: none;
+  font-size: 2em;
+  z-index: 0;
+}
+
+ol li{
+  text-align:left;
+  font-size: large;
+  margin: 1em;
+  z-index: 1;
+}
+
+ol div {
+  font-size: 0.8em;
+  text-align: justify;
+}

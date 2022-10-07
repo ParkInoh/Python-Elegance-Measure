@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Roboto+Mono:wght@300&display=swap');
+
+.options{
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.options_cmd{
+  font-size: 2em;
+  font-family: sans-serif;
+}
+
+.options span {
+  font-size: 1.3em;
+}
+.options select{
+  margin: 1em;
+  font-size: 1.2em;
+}
+
+.options .snip{
+  margin: 1em;
+}
+

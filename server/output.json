@@ -1,0 +1,62 @@
+{
+    "4045.py": {
+        "score": 0.662,
+        "conditionals": 0,
+        "loops": 12,
+        "functions": 2,
+        "functions_recursion": 1,
+        "max_depth": -0.524,
+        "avg_depth": -0.459,
+        "sum_depth": -0.788
+    },
+    "constants.py": {
+        "score": 6.873,
+        "conditionals": 0,
+        "loops": 0,
+        "functions": 0,
+        "functions_recursion": 0,
+        "max_depth": -0.81,
+        "avg_depth": -0.74,
+        "sum_depth": -1.313
+    },
+    "elegance.py": {
+        "score": -0.794,
+        "conditionals": 1,
+        "loops": 6,
+        "functions": 8,
+        "functions_recursion": 0,
+        "max_depth": -0.381,
+        "avg_depth": -0.443,
+        "sum_depth": 1.182
+    },
+    "eleganceUtils.py": {
+        "score": 3.391,
+        "conditionals": 0,
+        "loops": 3,
+        "functions": 2,
+        "functions_recursion": 0,
+        "max_depth": -0.238,
+        "avg_depth": -0.248,
+        "sum_depth": -0.394
+    },
+    "main.py": {
+        "score": -8.897,
+        "conditionals": 9,
+        "loops": 12,
+        "functions": 1,
+        "functions_recursion": 1,
+        "max_depth": 2.193,
+        "avg_depth": 2.209,
+        "sum_depth": 1.444
+    },
+    "utils.py": {
+        "score": -1.235,
+        "conditionals": 1,
+        "loops": 3,
+        "functions": 3,
+        "functions_recursion": 1,
+        "max_depth": -0.238,
+        "avg_depth": -0.319,
+        "sum_depth": -0.131
+    }
+}
