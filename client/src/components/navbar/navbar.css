@@ -1,8 +1,8 @@
-a{
+a {
   text-decoration: none;
   color: white;
 }
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,26 +10,27 @@ a{
   padding: 1.2em 1em;
 }
 
-.navbar_logo{
+.navbar_logo {
   font-size: 1.5em;
   color: white;
 }
 
-.navbar_logo:hover, .link:hover {
+.navbar_logo:hover,
+.link:hover {
   color: aqua;
 }
 
-.navbar_logo i{
-  color: orange
+.navbar_logo i {
+  color: orange;
 }
 
-.navbar_menu{
+.navbar_menu {
   display: flex;
   list-style: none;
   padding-left: 0;
 }
 
-.navbar_menu li{
+.navbar_menu li {
   /* padding: 6px 12px; */
   padding: 0.4em 0.75em;
 }

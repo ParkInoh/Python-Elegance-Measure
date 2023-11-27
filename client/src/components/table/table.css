@@ -5,19 +5,23 @@ table {
   height: 100%;
 }
 
-table td, table th {
+table td,
+table th {
   border: 1px solid #ddd;
   padding: 0.5em;
 }
 
-table tr:nth-child(even){background-color: #f2f2f2;}
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
 /* table tr:hover {background-color: #ddd;} */
 
-table th, tfoot {
+table th,
+tfoot {
   padding-top: 1em;
   padding-bottom: 1em;
   text-align: center;
-  background-color:black;
+  background-color: black;
   color: white;
 }

@@ -1,8 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  options: ["score", "conditionals"]
-}
+  options: ["score", "conditionals"],
+};
 
 const optionsSlice = createSlice({
   name: "options",
@@ -10,9 +10,9 @@ const optionsSlice = createSlice({
   reducers: {
     change: (state, action) => {
       state.options = action.payload;
-    }
-  }
-})
+    },
+  },
+});
 
-export const {change} = optionsSlice.actions;
+export const { change } = optionsSlice.actions;
 export default optionsSlice.reducer;

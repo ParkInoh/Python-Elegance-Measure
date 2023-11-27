@@ -1,11 +1,9 @@
 body {
   margin: 0;
-  font-family: sans-serif !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
   height: 100%;
 }
 
 code {
-  font-family: sans-serif,monospace !important;
+  font-family: sans-serif, monospace;
 }
