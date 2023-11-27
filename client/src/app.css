@@ -1,8 +1,7 @@
-*{
-  /* 없으면 이상함 */
+* {
   box-sizing: border-box;
 }
-.app{
+.app {
   height: 100vh;
   display: flex;
   justify-content: center;

@@ -2,26 +2,34 @@ form input::file-selector-button {
   display: none;
 }
 
-.noShow{
+.noShow {
   width: 6em;
-  color:transparent;
+  color: transparent;
 }
 .files input {
   outline: 2px dashed grey;
   outline-offset: -10px;
-  -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
-  transition: outline-offset .15s ease-in-out, background-color .15s linear;
+  -webkit-transition: outline-offset 0.15s ease-in-out,
+    background-color 0.15s linear;
+  transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
   padding: 120px 0px 85px 15px;
   text-align: center !important;
   margin: 0;
   width: 99% !important;
 }
-.files input:focus{     outline: 2px dashed grey;  outline-offset: -10px;
-  -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
-  transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid grey;
+.files input:focus {
+  outline: 2px dashed grey;
+  outline-offset: -10px;
+  -webkit-transition: outline-offset 0.15s ease-in-out,
+    background-color 0.15s linear;
+  transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+  border: 1px solid grey;
 }
-.files{ position:relative}
-.files:after {  pointer-events: none;
+.files {
+  position: relative;
+}
+.files:after {
+  pointer-events: none;
   position: absolute;
   top: 60px;
   left: 0;
@@ -31,15 +39,18 @@ form input::file-selector-button {
   content: "";
   display: block;
   margin: 0 auto;
-  background-image: url('/public/download_icon.png');
+  background-image: url("/public/download_icon.png");
   background-size: 99%;
   background-repeat: no-repeat;
 }
-.color input{ background-color:#f1f1f1;}
+.color input {
+  background-color: #f1f1f1;
+}
 .files:before {
   position: absolute;
   bottom: 10px;
-  left: 0;  pointer-events: none;
+  left: 0;
+  pointer-events: none;
   width: 99%;
   right: 10;
   height: 57px;
@@ -52,7 +63,6 @@ form input::file-selector-button {
   text-align: center;
 }
 
-
 @import url(https://fonts.googleapis.com/css?family=BenchNine:700);
 .snip {
   background-color: #c47135;
@@ -60,7 +70,7 @@ form input::file-selector-button {
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: 'BenchNine', Arial, sans-serif;
+  font-family: "BenchNine", Arial, sans-serif;
   font-size: 1em;
   font-size: 22px;
   line-height: 1em;
